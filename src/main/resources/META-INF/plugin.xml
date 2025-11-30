@@ -6,11 +6,9 @@
     <idea-version since-build="213.*"/>
     <description>
         <![CDATA[
-        Imagine you are navigating through your code or text in the editor. You can easily jump between words or whole lines, but when you want to move quickly
-        between paragraphs or logical blocks, you find there is no shortcut.
-
-        This plugin is the solution: it lets you jump to the next or previous empty line, helping you move efficiently between sections of your code or text.
-        Use <b>Ctrl+Meta+Alt+Down</b> to jump to the next empty line and <b>Ctrl+Meta+Alt+Up</b> to jump to the previous empty line.
+        ParagraphJump helps you quickly navigate between paragraphs or logical blocks in your code or text by jumping to the next or previous empty line.
+        Use <b>Shift+Control+9</b> to jump to the previous empty line and <b>Shift+Control+0</b> to jump to the next empty line.
+        The shortcuts are chosen to avoid conflicts with existing key bindings.
         ]]>
     </description>
 
@@ -22,17 +20,18 @@
       ]]>
     </change-notes>
     <depends>com.intellij.modules.platform</depends>
+    <depends>org.intellij.scala</depends>
 
     <actions>
         <action id="ParagraphJump.JumpPrevEmptyLine"
-                class="com.github.siggisigmann.paragraphjump.action.Up"
+                class="com.github.siggisigmann.paragraphjump.action.jump.Up"
                 text="Jump to Previous Empty Line">
-            <keyboard-shortcut keymap="$default" first-keystroke="shift meta alt UP"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="shift control 9"/>
         </action>
         <action id="ParagraphJump.JumpNextEmptyLine"
-                class="com.github.siggisigmann.paragraphjump.action.Down"
+                class="com.github.siggisigmann.paragraphjump.action.jump.Down"
                 text="Jump to Next Empty Line">
-            <keyboard-shortcut keymap="$default" first-keystroke="shift meta alt DOWN"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="shift control 0"/>
         </action>
 
         <group id="ParagraphJump.NavigateMenuGroup" text="Paragraph Jump" popup="true">

@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "com.github.siggisigmann"
-version = "1.0-SNAPSHOT"
+version = "1.0"
 
 repositories {
     mavenCentral()
@@ -23,8 +23,8 @@ dependencies {
       // Add necessary plugin dependencies for compilation here, example:
       //bundledPlugin("com.intellij.java")
     }
-
-    implementation("org.scala-lang:scala3-library_3:3.7.4")
+    
+    implementation("org.scala-lang:scala-library:2.13.12")
 }
 
 intellijPlatform {
@@ -44,5 +44,12 @@ tasks {
     withType<JavaCompile> {
         sourceCompatibility = "21"
         targetCompatibility = "21"
+    }
+    // Bundle scala-library into the plugin JAR
+    withType<org.jetbrains.intellij.platform.gradle.tasks.BuildPluginTask> {
+        from(configurations.runtimeClasspath) {
+            include("scala-library-*.jar")
+            into("lib")
+        }
     }
 }
