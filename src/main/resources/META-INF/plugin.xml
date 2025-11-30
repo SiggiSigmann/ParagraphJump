@@ -1,0 +1,48 @@
+<idea-plugin>
+    <id>com.github.siggisigmann.ParagraphJump</id>
+    <name>ParagraphJump</name>
+    <version>1.0</version>
+    <vendor email="tobias.sigmann@gmail.com" url="https://github.com/SiggiSigmann">Tobias Sigmann</vendor>
+    <idea-version since-build="213.*"/>
+    <description>
+        <![CDATA[
+        Imagine you are navigating through your code or text in the editor. You can easily jump between words or whole lines, but when you want to move quickly
+        between paragraphs or logical blocks, you find there is no shortcut.
+
+        This plugin is the solution: it lets you jump to the next or previous empty line, helping you move efficiently between sections of your code or text.
+        Use <b>Ctrl+Meta+Alt+Down</b> to jump to the next empty line and <b>Ctrl+Meta+Alt+Up</b> to jump to the previous empty line.
+        ]]>
+    </description>
+
+    <change-notes>
+        <![CDATA[
+        <ul>
+          <li>1.0 Initial</li>
+        </ul>
+      ]]>
+    </change-notes>
+    <depends>com.intellij.modules.platform</depends>
+
+    <actions>
+        <action id="ParagraphJump.JumpNextEmptyLine"
+                class="com.github.siggisigmann.paragraphjump.JumpToEmptyLineAction$Down"
+                text="Jump to Next Empty Line">
+            <keyboard-shortcut keymap="$default" first-keystroke="Control Meta Alt DOWN"/>
+        </action>
+
+        <action id="ParagraphJump.JumpPrevEmptyLine"
+                class="com.github.siggisigmann.paragraphjump.JumpToEmptyLineAction$Up"
+                text="Jump to Previous Empty Line">
+            <keyboard-shortcut keymap="$default" first-keystroke="Control Meta Alt UP"/>
+        </action>
+
+        <group id="ParagraphJump.NavigateMenuGroup" text="Paragraph Jump" popup="true">
+            <add-to-group group-id="GoToMenu" anchor="last"/>
+            <reference ref="ParagraphJump.JumpNextEmptyLine"/>
+            <reference ref="ParagraphJump.JumpPrevEmptyLine"/>
+        </group>
+    </actions>
+
+    <extensions defaultExtensionNs="com.intellij">
+    </extensions>
+</idea-plugin>
