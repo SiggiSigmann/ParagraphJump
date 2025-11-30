@@ -23,6 +23,8 @@ dependencies {
       // Add necessary plugin dependencies for compilation here, example:
       //bundledPlugin("com.intellij.java")
     }
+
+    implementation("org.scala-lang:scala3-library_3:3.7.4")
 }
 
 intellijPlatform {
