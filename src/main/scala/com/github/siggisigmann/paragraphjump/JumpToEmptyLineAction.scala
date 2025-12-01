@@ -3,7 +3,6 @@ package com.github.siggisigmann.paragraphjump
 import com.github.siggisigmann.paragraphjump.ParagraphUtil
 import com.intellij.openapi.actionSystem.{AnAction, AnActionEvent, CommonDataKeys}
 import com.intellij.openapi.editor.{Document, Editor, ScrollType}
-import com.intellij.openapi.util.TextRange
 
 /**
  * Abstract action to jump the caret to the next or previous paragraph in the editor.

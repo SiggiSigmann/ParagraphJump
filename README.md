@@ -10,3 +10,5 @@ ParagraphJump is an IntelliJ IDEA plugin that helps you quickly navigate between
 - Jump to the next empty line: <kbd>Shift</kbd> + <kbd>Control</kbd> + <kbd>0</kbd>
 - Jump to the previous empty line: <kbd>Shift</kbd> + <kbd>Control</kbd> + <kbd>9</kbd>
 - Shortcuts are chosen to avoid conflicts with existing key bindings.
+
+![Demo](images/demo.gif)
